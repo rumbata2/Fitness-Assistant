@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% endblock %}
+
+{% block content %}
+    <p class="centered-welcome"> Welcome! </p>
+    <form action="/" method="POST" class="centered-query-form">
+        <input name="input_text" type="text">
+        <input value="Submit" type="submit"> 
+    </form>
+
+    <p class="centered-response" id="response">
+        {{ generated_response }}
+    </p>
+{% endblock %}
